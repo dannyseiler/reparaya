@@ -41,7 +41,7 @@ const Header = () => {
               onClick={() => scrollToSection('inicio')}
               className="text-lg font-semibold text-foreground hover:text-muted-foreground transition-colors"
             >
-              Daniel
+              ReparaYa
             </button>
             
             <ul className="hidden md:flex space-x-8">
