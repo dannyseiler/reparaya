@@ -9,10 +9,13 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import ScrollProgress from '@/components/ScrollProgress';
+import BackToTop from '@/components/BackToTop';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
       <Header />
       <Hero />
       <Services />
@@ -22,6 +25,7 @@ const Index = () => {
       <Contact />
       <Footer />
       <FloatingWhatsApp />
+      <BackToTop />
     </div>
   );
 };

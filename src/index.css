@@ -91,6 +91,13 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Mejorar el scroll en mobile */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 80px;
+    }
+  }
 }
 
 @layer utilities {
@@ -112,5 +119,48 @@
     background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0);
     background-size: 20px 20px;
     opacity: 0.5;
+  }
+
+  /* Touch-friendly animations for mobile */
+  @media (max-width: 768px) {
+    .hover\:scale-105:hover {
+      transform: scale(1.02);
+    }
+    
+    .hover\:translate-y-\[-2px\]:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Reduce motion for better mobile experience */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-fade-in,
+      .animate-scale-in,
+      .animate-subtle-float {
+        animation: none;
+      }
+      
+      .transition-all,
+      .transition-transform,
+      .transition-colors {
+        transition: none;
+      }
+    }
+  }
+
+  /* Smooth touch interactions */
+  .touch-action-manipulation {
+    touch-action: manipulation;
+  }
+}
+
+@layer components {
+  /* Mobile-optimized button styles */
+  .btn-mobile {
+    @apply min-h-[44px] min-w-[44px] touch-action-manipulation;
+  }
+  
+  /* Improved mobile card interactions */
+  .card-mobile {
+    @apply transform-gpu transition-transform duration-200 ease-out active:scale-[0.98];
   }
 }
