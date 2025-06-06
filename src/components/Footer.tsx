@@ -3,10 +3,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-gray-400">
-          &copy; 2024 Servicio Técnico Daniel. Todos los derechos reservados.
+    <footer className="bg-background border-t border-border/50 py-8">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 text-center">
+        <p className="text-muted-foreground text-sm">
+          &copy; 2024 Daniel - Servicio Técnico. Todos los derechos reservados.
         </p>
       </div>
     </footer>

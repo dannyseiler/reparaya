@@ -5,37 +5,39 @@ import { Check } from 'lucide-react';
 const About = () => {
   const features = [
     '5+ años de experiencia',
-    'Soporte 24/7',
-    'Garantía en todos los trabajos',
-    'Precios competitivos'
+    'Soporte disponible',
+    'Garantía incluida',
+    'Precios justos'
   ];
 
   return (
-    <section id="sobre-mi" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="sobre-mi" className="py-24 bg-background">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-center lg:text-left">
-            <div className="w-64 h-64 mx-auto lg:mx-0 bg-hero-gradient rounded-full flex items-center justify-center text-6xl shadow-2xl mb-8 lg:mb-0">
+            <div className="w-48 h-48 mx-auto lg:mx-0 bg-muted rounded-2xl flex items-center justify-center text-5xl mb-8 lg:mb-0">
               👨‍💻
             </div>
           </div>
           
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Conocé a Daniel</h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Soy técnico especializado en reparación y mantenimiento de computadoras con más de 5 años de experiencia en el sector. Mi pasión es ayudar a las personas a resolver sus problemas tecnológicos de manera rápida y eficiente.
+            <h2 className="text-3xl font-light text-foreground mb-6">Daniel</h2>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Técnico especializado en reparación y mantenimiento de computadoras con más de 5 años de experiencia. 
+              Mi objetivo es ayudarte a resolver tus problemas tecnológicos de manera eficiente.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Trabajo tanto de forma presencial como remota, adaptándome a las necesidades de cada cliente. Mi objetivo es brindar un servicio de calidad que supere tus expectativas.
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Trabajo tanto presencial como remotamente, adaptándome a tus necesidades 
+              para brindarte un servicio de calidad.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="bg-green-100 rounded-full p-1">
-                    <Check className="w-4 h-4 text-green-600" />
+                  <div className="bg-accent rounded-full p-1">
+                    <Check className="w-3 h-3 text-foreground" />
                   </div>
-                  <span className="text-gray-700 font-medium">{feature}</span>
+                  <span className="text-muted-foreground text-sm">{feature}</span>
                 </div>
               ))}
             </div>

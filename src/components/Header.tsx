@@ -1,13 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { Phone } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -20,20 +20,19 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/98 backdrop-blur-md shadow-lg' : 'bg-white/95 backdrop-blur-md'
-    } border-b border-gray-100`}>
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      scrolled ? 'bg-white/80 backdrop-blur-lg border-b border-border/50' : 'bg-transparent'
+    }`}>
+      <nav className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center py-4">
           <button 
             onClick={() => scrollToSection('inicio')}
-            className="text-xl md:text-2xl font-bold text-tech-blue hover:scale-105 transition-transform"
+            className="text-lg font-semibold text-foreground hover:text-muted-foreground transition-colors"
           >
-            💻 Servicio Técnico Daniel
+            Daniel
           </button>
           
           <ul className="hidden md:flex space-x-8">
             {[
-              { name: 'Inicio', id: 'inicio' },
               { name: 'Servicios', id: 'servicios' },
               { name: 'Sobre Mí', id: 'sobre-mi' },
               { name: 'Testimonios', id: 'testimonios' },
@@ -43,7 +42,7 @@ const Header = () => {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-700 hover:text-tech-blue font-medium transition-colors duration-200"
+                  className="text-sm text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </button>
@@ -53,10 +52,10 @@ const Header = () => {
           
           <a 
             href="https://wa.me/5491131797343"
-            className="bg-whatsapp-gradient text-white px-4 py-2 rounded-full font-semibold hover:scale-105 hover:shadow-lg transition-all duration-200 flex items-center gap-2"
+            className="bg-foreground text-background px-4 py-2 rounded-lg text-sm font-medium hover:bg-foreground/90 transition-all duration-200 flex items-center gap-2"
           >
-            <Phone className="w-4 h-4" />
-            <span className="hidden sm:inline">WhatsApp</span>
+            <MessageCircle className="w-4 h-4" />
+            <span className="hidden sm:inline">Contacto</span>
           </a>
         </div>
       </nav>

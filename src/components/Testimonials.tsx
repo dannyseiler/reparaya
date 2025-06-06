@@ -1,56 +1,50 @@
 
 import React from 'react';
-import { Star } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: 'María González',
-      service: 'Optimización de PC',
-      text: 'Daniel solucionó mi problema en menos de 2 horas. Mi PC que tardaba 10 minutos en encender ahora funciona como nueva. Súper recomendado!',
+      service: 'Optimización',
+      text: 'Solucionó mi problema rápidamente. Mi PC funciona como nueva.',
       avatar: '👩'
     },
     {
       name: 'Carlos Rodríguez',
       service: 'Soporte Remoto',
-      text: 'Excelente servicio remoto. Me ayudó a instalar todos los programas que necesitaba para mi trabajo desde casa. Muy profesional.',
+      text: 'Excelente servicio remoto. Muy profesional y eficiente.',
       avatar: '👨'
     },
     {
       name: 'Ana Martínez',
-      service: 'Recuperación de Datos',
-      text: 'Pensé que había perdido todas mis fotos familiares. Daniel logró recuperar todo. Un genio! Precios súper accesibles.',
+      service: 'Recuperación',
+      text: 'Recuperó todos mis archivos importantes. Muy recomendable.',
       avatar: '👵'
     }
   ];
 
   return (
-    <section id="testimonios" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonios" className="py-24 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Lo Que Dicen Mis Clientes</h2>
-          <p className="text-xl text-gray-600">Testimonios reales de personas que confiaron en mi servicio</p>
+          <h2 className="text-3xl font-light text-foreground mb-4">Testimonios</h2>
+          <p className="text-muted-foreground">Lo que dicen mis clientes</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-card rounded-xl p-6 border border-border/50"
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="text-gray-600 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
+              <p className="text-muted-foreground italic mb-6 leading-relaxed">"{testimonial.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-hero-gradient rounded-full flex items-center justify-center text-xl">
+                <div className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-lg">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.service}</p>
+                  <h4 className="font-medium text-foreground text-sm">{testimonial.name}</h4>
+                  <p className="text-xs text-muted-foreground">{testimonial.service}</p>
                 </div>
               </div>
             </div>
